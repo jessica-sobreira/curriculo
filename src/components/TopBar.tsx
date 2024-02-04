@@ -10,7 +10,7 @@ const MusicStyled = styled(MusicNoteIcon)`
 export function TopBar() {
     
     return (
-        <AppBar>
+        <AppBar position='relative'>
             <Toolbar>
                 <MusicStyled />
                 <Box display='flex' flexDirection='column'>
