@@ -1,10 +1,21 @@
+import { TopBar } from "./components/TopBar";
 
 
 
 function App() {
   return (
     <>
-    <h1>Olá</h1>
+
+    <TopBar />
+
+    <div>
+      Listagem de recomendações
+    </div>
+
+    <div>
+      Formulário para adicionar recomendação
+    </div>
+
 
     </>
   )
