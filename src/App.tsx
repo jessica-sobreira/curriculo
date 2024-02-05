@@ -1,3 +1,4 @@
+import { FormularioRecomendacao } from "./components/FormularioRecomendacao";
 import { Recomendacoes } from "./components/Recomendacoes";
 import { TopBar } from "./components/TopBar";
 
@@ -9,11 +10,7 @@ function App() {
 
     <TopBar />
     <Recomendacoes />
-
-    <div>
-      Formulário para adicionar recomendação
-    </div>
-
+    <FormularioRecomendacao />
 
     </>
   )

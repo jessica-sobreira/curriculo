@@ -16,48 +16,23 @@ const initialState: Recomendacao[] = [
 
 const [recomendacoes, setRecomendacoes] = useState<Recomendacao[]>(initialState);
 
-const submitForm = (e: any) => {
-    e.preventDefault()
 
-    const novaRecomendacao: Recomendacao = {
-        nome: e.target.nome.value,
-        conteudo: e.target.conteudo.value
-    }
-
-    setRecomendacoes([...recomendacoes, novaRecomendacao]);
-
-}
 
 export function Recomendacoes() {
     return (
+        <>
         <Container>
             <h1>Recomendações</h1>
 
             <Grid container>
                 {recomendacoes.map((item) => (
-                    <CardRecomendacao recomendacao={item} key={item.nome}></CardRecomendacao>
+                    <CardRecomendacao recomendacao={item}></CardRecomendacao>
                 ))}
             </Grid>
 
-            <br/>
-
-            <h2>Adicionar recomendação</h2>
-
-            <Grid container>
-                <Grid>
-                    <form onSubmit={submitForm}>
-                        <label>Nome:</label>
-                        <input type="text" name="nome" />
-                        <br/>
-                        <label>Conteúdo</label>
-                        <input type="text" name="conteudo" />
-                        <br/>
-                        <button type="submit">Adicionar</button>
-                    </form>
-                </Grid>
-            </Grid>
-    
+            <br/>    
         </Container>
 
+    </>
     )
 }
