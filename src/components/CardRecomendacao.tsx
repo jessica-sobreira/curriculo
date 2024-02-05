@@ -4,27 +4,29 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Recomendacao } from "../model/recomendacao.model";
 
+interface CardRecomendacaoProps {
+    recomendacao: Recomendacao
+}
 
-export function CardRecomendacao() {
+export function CardRecomendacao(props: CardRecomendacaoProps) {
     return (
-
-                <Grid xs={3}>
-                    <Card sx={{ maxWidth: 345 }}>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small">Share</Button>
-                        <Button size="small">Learn More</Button>
-                    </CardActions>
-                    </Card>
-                </Grid>
+        <Grid container xs={3}>
+            <Card sx={{ maxWidth: 345 }}>
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                {props.recomendacao.nome}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                {props.recomendacao.conteudo}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="small">Share</Button>
+                <Button size="small">Learn More</Button>
+            </CardActions>
+            </Card>
+        </Grid>
     )
 }

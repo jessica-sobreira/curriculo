@@ -1,4 +1,4 @@
 export interface Recomendacao {
     nome: string,
-    consteudo: string
+    conteudo: string
 }
