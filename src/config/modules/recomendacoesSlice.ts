@@ -21,7 +21,14 @@ const initialState: Recomendacao[] = [
 export const recomendacoesSlice = createSlice({
     name: "recomendacoes",
     initialState,
-    reducers: {}
+    reducers: {
+        criarRecomendacao: (state, action) => {
+            return [...state, action.payload];
+
+        }
+    }
 })
 
 export default recomendacoesSlice.reducer;
+
+export const { criarRecomendacao } = recomendacoesSlice.actions;

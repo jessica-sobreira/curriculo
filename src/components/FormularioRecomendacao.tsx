@@ -1,20 +1,25 @@
 import { Grid } from "@mui/material";
 import { Recomendacao } from "../model/recomendacao.model";
+import { useAppDispatch } from "../config/hooks";
+import { criarRecomendacao } from "../config/modules/recomendacoesSlice";
 
-
-const submitForm = (e: any) => {
-    e.preventDefault()
-
-    const novaRecomendacao: Recomendacao = {
-        nome: e.target.nome.value,
-        conteudo: e.target.conteudo.value,
-    }
-
-    // setRecomendacoes([...recomendacoes, novaRecomendacao]);
-
-}
 
 export function FormularioRecomendacao() {
+    const dispatch = useAppDispatch();
+
+    const submitForm = (e: any) => {
+        e.preventDefault()
+    
+        const novaRecomendacao: Recomendacao = {
+            nome: e.target.nome.value,
+            conteudo: e.target.conteudo.value,
+        }
+
+        dispatch(criarRecomendacao(novaRecomendacao))
+    }
+
+
+
     return (
         <>
         <h2>Adicionar recomendação</h2>
