@@ -10,6 +10,10 @@ const initialState: Recomendacao[] = [
         nome: "Homer",
         conteudo: "Lisa é muito inteligente"
     },
+    {
+        nome: "Jéssica",
+        conteudo: "Lisa foi uma excelente colega"
+    }
 ];
 
 
@@ -19,3 +23,5 @@ export const recomendacoesSlice = createSlice({
     initialState,
     reducers: {}
 })
+
+export default recomendacoesSlice.reducer;

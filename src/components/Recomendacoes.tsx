@@ -1,24 +1,13 @@
 import { Container, Grid } from "@mui/material";
 import { CardRecomendacao } from "./CardRecomendacao";
-import { useState } from "react";
-import { Recomendacao } from "../model/recomendacao.model";
-
-const initialState: Recomendacao[] = [
-    {
-        nome: "Marge",
-        conteudo: "Lisa é uma filha adorável"
-    },
-    {
-        nome: "Homer",
-        conteudo: "Lisa é muito inteligente"
-    },
-];
-
-const [recomendacoes, setRecomendacoes] = useState<Recomendacao[]>(initialState);
+import { useAppSelector } from "../config/hooks";
 
 
 
 export function Recomendacoes() {
+    const recomendacoes = useAppSelector((store) => store.recomendacoes);
+
+
     return (
         <>
         <Container>
