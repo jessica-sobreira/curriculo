@@ -11,6 +11,7 @@ export function FormularioRecomendacao() {
         e.preventDefault()
     
         const novaRecomendacao: Recomendacao = {
+            id: 1,
             nome: e.target.nome.value,
             conteudo: e.target.conteudo.value,
         }
